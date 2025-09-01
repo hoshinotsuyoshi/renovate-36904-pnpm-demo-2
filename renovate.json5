@@ -1,0 +1,26 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    ":automergeRequireAllStatusChecks"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "minimumReleaseAge": "14 days",
+  "schedule": ["* * * * 0,6"],
+  "packageRules": [
+    {
+      "groupName": "dev-tools",
+      "description": "Automerge development tools that only need CI to pass",
+      "matchPackageNames": [
+        "pnpm"
+      ],
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "automerge": false
+    }
+  ]
+}
